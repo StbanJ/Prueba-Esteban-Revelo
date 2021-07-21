@@ -1,12 +1,33 @@
-<div>
-    <h2>Episodios</h2>
-    <ul>
-        <!-- <div  class="flex flex-wrap"> -->
-            <li *ngFor="let item of episodes">
-              <img src="{{item.img_url}}" alt="" width="250" height="250">
-              <p >{{item.name}}</p>
-              <a routerLink="/episodes/{{item.id}}"> Ver episodio >>> </a>
+<div class="flex flex-col bg-black">
+
+  <div>
+    <nav class="bg-grey-light p-3 rounded font-mono w-full m-0 p-4">
+        <ol class="list-reset flex text-white">
+          <li><a href="./episodes" class="text-blue font-bold">Episodios</a></li>
+          <li><span class="mx-2">/</span></li>
+        </ol>
+    </nav>
+  </div>  
+
+  <div>
+    <h2 class="text-center text-white text-opacity-75 text-4xl font-mono py-8">Episodios</h2>
+  </div>
+
+  <div class="flex text-center w-screen">
+
+    <ul class="flex flex-wrap border-2 border-white-500 justify-center">
+            <li *ngFor="let item of episodes" class="m-8 shadow-2xl content-center rounded-3xl">
+              <p class=" m-8 font-mono text-4xl text-white">{{item.name}}</p>
+              <img src="{{item.img_url}}" alt="" width="500" height="500" class=" mr-20">
+              
+              <div class="border-2 transition duration-300 ease-in-out transform motion-reduce:transform-none  py-2 px-8 mx-20 mt-10 bg-transparent text-white">
+                <a  routerLink="/episodes/{{item.id}}"> 
+                    Ver Mas
+                </a>
+              </div>
+              
             </li>
-        <!-- </div> -->
     </ul>
+
+  </div>
 </div>

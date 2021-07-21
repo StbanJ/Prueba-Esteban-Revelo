@@ -1,31 +1,45 @@
-<div>
-    <h2>Personaje </h2>
-</div>
-<div> 
-<div>
+<div class="flex-col bg-black">
     <div>
-        <img src="{{character.img_url}}" /> 
-    </div>
+        <nav class=" p-3 rounded font-mono w-full m-0 p-4">
+    <ol class="list-reset flex text-white ">
+      <li><a href="/episodes" >Episodios</a></li>
+      <li><span class="mx-2">/</span></li>
+      <li><a href="javascript: history.go(-1)" >Episodio Anterior</a></li>
+      <li><span class="mx-2">/</span></li>
+      <li class="text-white font-mono">Personaje</li>
+    </ol>
+  </nav>
 
-    <div>
-        <h1>
-             {{character.name}}
-        </h1>
-        <p> Status: {{character.status}}</p>
-        <p> Specie: {{character.species}}</p>
-        <p> Gender: {{character.gender}}</p>
-        <p>Alias</p>
-        <ul *ngFor="let item of character.alias"> 
-            <li>
-                {{item}}
-            </li>
-        </ul>
-        <p> Origin: {{character.origin}}</p>
-        <p>Abilities</p>
-        <ul *ngFor="let item of character.abilities"> 
-            <li>
-                {{item}}
-            </li>
-        </ul>
+<div>
+    <h1 class="text-center text-white  text-4xl font-mono py-8">
+        {{character.name}}
+    </h1>
 </div>
+
+<div class = "flex flex-wrap border-2 border-white justify-center mx-96 my-8 py-8 shadow-2xl content-center rounded-3xl">
+
+    <ul>
+        <li><img src="{{character.img_url}}" width="500px" height="50000px" class=" mr-16 my-0" />  </li>
+    </ul>
+    <ul  class="mx-16 text-lg font-mono list-disc text-white">
+                <li> Status: {{character.status}}</li>
+                <li> Specie: {{character.species}}</li>
+                <li> Gender: {{character.gender}}</li>
+                <li>Alias</li>
+                <ul *ngFor="let item of character.alias"> 
+                    <li class="text-mono">
+                        {{item}}
+                    </li>
+                </ul>
+                <li> Origin: {{character.origin}}</li>
+                <li>Abilities</li>
+                <ul *ngFor="let item of character.abilities"> 
+                    <li class="text-mono">
+                        {{item}}
+                    </li>
+                </ul>
+        
+    </ul>   
+</div>
+    </div>
 </div>
